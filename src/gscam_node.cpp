@@ -244,9 +244,9 @@ bool GSCamNode::impl::create_pipeline()
   if (cxt_.image_encoding_ == "jpeg") {
     jpeg_pub_ =
       node_->create_publisher<sensor_msgs::msg::CompressedImage>("image_raw/compressed", 1);
-  } else {
-    camera_pub_ = node_->create_publisher<sensor_msgs::msg::Image>("image_raw", 1);
-  }
+  } 
+
+  camera_pub_ = node_->create_publisher<sensor_msgs::msg::Image>("image_raw", 1);
 
   // Pre-roll camera if needed
   if (cxt_.preroll_) {
